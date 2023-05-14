@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+  <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<script language="JavaScript" type="text/javascript">
+
+if (document.images) {
+var ladybird1 = new Image();
+ladybird1.src = "Lilies.png";
+
+var ladybird2 = new Image();
+ladybird2.src = "DayLilies.png";
+
+var ladybird3 = new Image();
+ladybird3.src = "Roses.png";
+}
+
+function timeimgs(numb) {
+thetimer = setTimeout("imgturn('" +numb+ "')", 1000);
+}
+
+function imgturn(numb) {  // Reusable image turner
+if (document.images) {
+
+if (numb == "3") {         // This will loop the image
+document["ladybird"].src = eval("ladybird3.src");
+timeimgs('1');
+}
+
+else {
+document["ladybird"].src = eval("ladybird" + numb + ".src");
+
+timeimgs(numb = ++numb);
+}
+}
+}
+
+// -->
+</script>
+
+<body onload="timeimgs('2');">
+<h1 style="color:green;" align="center">Did you see the Ladybug?</h1>
+<div align="center">
+<img src="ladybug1.jpg" name="ladybird" id="ladybird" width="80%" height=80%" alt="ladybird">
+<h1 style="font-size:50px; color:red;">Happy Mother's Day</h1>
+</div>
+</body>
+</html>
